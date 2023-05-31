@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/welcome', function (){
-    return view('layouts.app');
+    return view('home');
 })->name('user');

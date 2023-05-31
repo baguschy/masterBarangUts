@@ -10,12 +10,9 @@
                     <a class="nav-link active" aria-current="page" href="#">home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">about</a>
+                    <a class="nav-link" href="#">Stokroom</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">portfolio</a>
-                </li>
-                <button type="button" class="btn btn-light btn-stock"><i class="bi bi-building-fill"></i> Stockroom</button>
+                <button type="button" class="btn btn-light btn-profile"><i class="bi bi-person-badge"></i> Profile</button>
             </ul>
         </div>
     </div>
