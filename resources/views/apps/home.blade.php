@@ -17,7 +17,7 @@
                     </p>
                     <p>This is the main page for the inventory website, to view inventory data, please click the button below</p>
                 </div>
-                <button type="button" class="btn btn-light btn-view-data">View Data <i class="bi bi-arrow-right"></i></button>
+                <a href="" type="button" class="btn btn-light btn-view-data">View Data <i class="bi bi-arrow-right"></i></a>
             </div>
             <div class="col-6">
                 <img src="{{ Vite::asset('resources/images/home/figure-profile.png') }}" class="figure-profile" alt="figure profile">

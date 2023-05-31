@@ -52,7 +52,7 @@ body {
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
-    line-height: 19px;
+    line-height: 29px;
     letter-spacing: 0.02em;
 
     color: #fafafa;
@@ -111,19 +111,86 @@ body {
 .btn-view-data {
     margin-top: 20px;
     width: 209px;
-    height: 62px;
+    height: 48px;
     background: #f22225;
     border-radius: 50px;
 
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 28px;
 
     color: #edf5fe;
+
+    text-align: center;
 }
 
 .figure-profile {
     width: 600px;
     margin-top: 10px;
+}
+
+.figure-profile-about {
+    width: 260px;
+}
+
+.figure-profile-project-qa {
+    width: 170px;
+    margin-left: -20px;
+}
+
+.figure-profile-project-develop {
+    width: 170px;
+    margin-left: -20px;
+    margin-top: 29px;
+}
+
+.distance-dash-profile {
+    margin-top: 70px;
+}
+
+.custom-margin-left {
+    margin-left: -70px;
+}
+
+.title-profile {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 56px;
+    letter-spacing: 0.02em;
+
+    color: #0f172a;
+}
+
+.desc-profile {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #757b82;
+    padding-right: 50px;
+}
+
+.btn-more-about-me {
+    width: 223px;
+    height: 40px;
+    left: 988px;
+    top: 1489px;
+    line-height: 20px;
+
+    background: #f22225;
+    border-radius: 50px;
+
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.custom-width-card {
+    width: 18rem;
+    margin-right: 48px;
+    margin-bottom: 40px;
 }

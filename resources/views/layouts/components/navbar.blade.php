@@ -7,12 +7,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Stokroom</a>
                 </li>
-                <button type="button" class="btn btn-light btn-profile"><i class="bi bi-person-badge"></i> Profile</button>
+                <a type="button" href="{{ route('profile') }}" class="btn btn-light btn-profile"><i class="bi bi-person-badge"></i> Profile</a>
             </ul>
         </div>
     </div>
