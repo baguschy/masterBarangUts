@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\Unit;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -12,7 +13,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return view('apps.item.index');
+        $items = Item::all();
+        return view('apps.item.index', compact('items'));
     }
 
     /**

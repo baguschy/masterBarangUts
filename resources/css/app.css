@@ -3,6 +3,7 @@ html,
 body {
     overflow-x: hidden;
     font-family: "Poppins", sans-serif;
+    font-size: 18px;
 }
 .navbar {
     height: 100px;
@@ -213,4 +214,12 @@ body {
 
 .table {
     font-size: 20px;
+}
+
+.icon-white {
+    color: #ffffff;
+}
+
+.fit-screen {
+    min-height: 86vh;
 }

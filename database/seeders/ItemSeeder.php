@@ -21,7 +21,8 @@ class ItemSeeder extends Seeder
             'code' => 'B-721',
             'name' => 'Monitor',
             'price' => 2500000,
-            'desc' => $faker->text(200)
+            'desc' => $faker->text(200),
+            'stock' => 98
         ]);
 
         Item::query()->create([
@@ -29,7 +30,8 @@ class ItemSeeder extends Seeder
             'code' => 'B-722',
             'name' => 'Kursi Gaming MX-300',
             'price' => 500000,
-            'desc' => $faker->text(200)
+            'desc' => $faker->text(200),
+            'stock' => 198
         ]);
 
         Item::query()->create([
@@ -37,7 +39,8 @@ class ItemSeeder extends Seeder
             'code' => 'B-723',
             'name' => 'Speaker Komputer ACER',
             'price' => 300000,
-            'desc' => $faker->text(200)
+            'desc' => $faker->text(200),
+            'stock' => 88
         ]);
 
         Item::query()->create([
@@ -45,7 +48,8 @@ class ItemSeeder extends Seeder
             'code' => 'B-724',
             'name' => 'Kertas Glossy',
             'price' => 250000,
-            'desc' => $faker->text(200)
+            'desc' => $faker->text(200),
+            'stock' => 218
         ]);
 
         Item::query()->create([
@@ -53,7 +57,8 @@ class ItemSeeder extends Seeder
             'code' => 'B-725',
             'name' => 'Proyektor',
             'price' => 1200000,
-            'desc' => $faker->text(200)
+            'desc' => $faker->text(200),
+            'stock' => 150
         ]);
     }
 }
