@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Route::get('/welcome', function (){
 })->name('welcome');
 
 Route::get('/profile', ProfileController::class)->name('profile');
+
+Route::prefix('apps')->group(function () {
+    Route::resource('item', ItemController::class);
+});

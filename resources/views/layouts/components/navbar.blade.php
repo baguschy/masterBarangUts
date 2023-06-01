@@ -10,7 +10,7 @@
                     <a class="nav-link {{ request()->routeIs('welcome') ? 'active' : '' }}" aria-current="page" href="{{ route('welcome') }}">home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Stokroom</a>
+                    <a class="nav-link {{ request()->routeIs('item.*') ? 'active' : '' }}" href="{{ route('item.index') }}">Stokroom</a>
                 </li>
                 <a type="button" href="{{ route('profile') }}" class="btn btn-light btn-profile"><i class="bi bi-person-badge"></i> Profile</a>
             </ul>
