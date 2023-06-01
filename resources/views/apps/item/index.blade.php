@@ -8,14 +8,20 @@
                 </div>
                 <div class="col-lg-3 col-xl-2">
                     <div class="d-grid gap-4">
-                        <a href="" class="btn btn-success">Tambah Barang</a>
+                        <a href="{{ route('item.create') }}" class="btn btn-success">Tambah Barang</a>
                     </div>
                 </div>
             </div>
             <hr>
             <div class="card rounded width-card margin-card">
+                @if (session()->has('notif'))
+                    <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+                        <i class="bi bi-check-lg"></i> {{ session()->get('notif') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 <div class="card-body">
-                    <table class="table table-hover" id="table-items">
+                    <table class="table table-hover table-responsive" id="table-items">
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
@@ -33,7 +39,7 @@
                                     <th scope="row">{{ $key+1 }}</th>
                                     <td>{{ $item->code }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->price }}</td>
+                                    <td>{{ "Rp. ". number_format($item->price, 0, ".", ",") }}</td>
                                     <td>{{ $item->stock }}</td>
                                     <td>{{ $item->unit->name }}</td>
                                     <td>

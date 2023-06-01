@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Unit;
-use Illuminate\Http\Request;
+use Validator;
 
 class ItemController extends Controller
 {
@@ -13,9 +14,9 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = Item::all();
         $titlePage = "Data Barang";
-        return view('apps.item.index', compact('items', 'titlePage'));
+        $items = Item::all();
+        return view('apps.item.index', compact('titlePage', 'items'));
     }
 
     /**
@@ -23,7 +24,9 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        $titlePage = "Tambah Barang";
+        $units = Unit::all();
+        return view('apps.item.add', compact('units', 'titlePage'));
     }
 
     /**
@@ -31,13 +34,42 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $messages = [
+            'required' => ':attribute belum diisi',
+            'unique' => 'Kode barang sudah digunakan',
+            'numeric' => 'Inputtan harus angka'
+        ];
+
+        $validate = Validator::make($request->all(), [
+            'code_item' => 'required|unique:items,code',
+            'name_item' => 'required',
+            'desc_item' => 'required',
+            'price_item' => 'required|numeric',
+            'stock_item' => 'required|numeric',
+            'unit_item' => 'required'
+        ], $messages);
+
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate)->withInput();
+        }
+
+        $item = new Item;
+        $item->code = $request->code_item;
+        $item->unit_id = $request->unit_item;
+        $item->name = $request->name_item;
+        $item->price = $request->price_item;
+        $item->desc = $request->desc_item;
+        $item->stock = $request->stock_item;
+
+        $item->save();
+
+        return redirect()->route('item.index')->with('notif', 'Berhasil Menambah Barang');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Item $item)
+    public function show(string $id)
     {
         //
     }
@@ -45,7 +77,7 @@ class ItemController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Item $item)
+    public function edit(string $id)
     {
         //
     }
@@ -53,7 +85,7 @@ class ItemController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Item $item)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -61,7 +93,7 @@ class ItemController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Item $item)
+    public function destroy(string $id)
     {
         //
     }
