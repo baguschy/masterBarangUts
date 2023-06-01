@@ -32,28 +32,28 @@
         </div>
         <div class="row row-cols-1 row-cols-md-4 mr-4 mt-5">
             <div class="col custom-width-card">
-                <div class="card">
+                <div class="card shadow-fill">
                     <div class="card-body">
                         <div class="chart-laravel"></div>
                     </div>
                 </div>
             </div>
             <div class="col custom-width-card">
-                <div class="card">
+                <div class="card shadow-fill">
                     <div class="card-body">
                         <div class="chart-bs"></div>
                     </div>
                 </div>
             </div>
             <div class="col custom-width-card">
-                <div class="card">
+                <div class="card shadow-fill">
                     <div class="card-body">
                         <div class="chart-sql"></div>
                     </div>
                 </div>
             </div>
             <div class="col custom-width-card">
-                <div class="card">
+                <div class="card shadow-fill">
                     <div class="card-body">
                         <div class="chart-react"></div>
                     </div>

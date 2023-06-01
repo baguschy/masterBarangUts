@@ -194,3 +194,7 @@ body {
     margin-right: 48px;
     margin-bottom: 40px;
 }
+
+.shadow-fill {
+    box-shadow: 10px 10px 5px lightblue;
+}
