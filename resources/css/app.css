@@ -55,7 +55,7 @@ body {
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
-    line-height: 29px;
+    line-height: 34px;
     letter-spacing: 0.02em;
 
     color: #fafafa;
@@ -122,7 +122,7 @@ body {
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-    line-height: 28px;
+    line-height: 33px;
 
     color: #edf5fe;
 
@@ -182,7 +182,7 @@ body {
     height: 40px;
     left: 988px;
     top: 1489px;
-    line-height: 20px;
+    line-height: 25px;
 
     background: #f22225;
     border-radius: 50px;
