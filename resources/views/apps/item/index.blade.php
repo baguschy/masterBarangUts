@@ -4,7 +4,7 @@
         <div class="row container">
             <div class="row mb-0 mt-4">
                 <div class="col-lg-9 col-xl-10">
-                    <h3 class="mb-3">Data barang</h3>
+                    <h3 class="mb-3">{{ $titlePage }}</h3>
                 </div>
                 <div class="col-lg-3 col-xl-2">
                     <div class="d-grid gap-4">
@@ -15,7 +15,7 @@
             <hr>
             <div class="card rounded width-card margin-card">
                 <div class="card-body">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="table-items">
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
@@ -103,7 +103,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                        <button type="button" class="btn btn-danger">Hapus</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -117,6 +117,19 @@
                 </div>
             </div>
         </div>
-
     </section>
 @endsection
+@push('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+@endpush
+@push('js-libraries')
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+@endpush
+@push('js')
+    <script>
+        $(document).ready( function () {
+            $('#table-items').DataTable();
+        });
+    </script>
+@endpush

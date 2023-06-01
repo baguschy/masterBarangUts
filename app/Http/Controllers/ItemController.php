@@ -14,7 +14,8 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::all();
-        return view('apps.item.index', compact('items'));
+        $titlePage = "Data Barang";
+        return view('apps.item.index', compact('items', 'titlePage'));
     }
 
     /**

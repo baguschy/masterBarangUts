@@ -9,6 +9,7 @@
         'resources/sass/app.scss',
         'resources/css/app.css'
     ])
+    @stack('css')
 </head>
 <body>
     @include('layouts.components.navbar')
