@@ -74,7 +74,7 @@
                                                                 </div>
                                                                 <div class="col-6">
                                                                     <label for="price-item" class="form-label">Harga</label>
-                                                                    <input type="text" class="form-control" id="price-item" value="{{ $item->price }}" disabled>
+                                                                    <input type="text" class="form-control" id="price-item" value="{{ "Rp. ". number_format($item->price, 0, ".", ",") }}" disabled>
                                                                 </div>
                                                             </div>
                                                             <div class="row mt-3">
