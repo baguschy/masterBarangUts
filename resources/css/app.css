@@ -11,7 +11,7 @@ body {
 }
 
 .container-fluid {
-    margin-left: 280px;
+    margin-left: 150px;
 }
 
 .navbar-brand {
@@ -27,11 +27,11 @@ body {
 }
 
 .navbar-collapse {
-    margin-left: 290px;
+    margin-left: 380px;
 }
 
 .nav-link {
-    margin-right: 70px;
+    margin-right: 100px;
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -47,7 +47,7 @@ body {
 }
 
 .btn-profile {
-    margin-left: 380px;
+    margin-right: 70px;
     width: 146px;
     height: 49px;
     background: #f22225;
@@ -63,9 +63,8 @@ body {
 }
 
 .hero-banner {
-    padding-left: 290px;
+    padding-left: 170px;
     background-color: #edf5fe;
-    /* height: 85vh; */
 }
 
 .dash {
@@ -133,6 +132,7 @@ body {
 .figure-profile {
     width: 600px;
     margin-top: 10px;
+    margin-left: 60px;
 }
 
 .figure-profile-about {
@@ -196,7 +196,7 @@ body {
 
 .custom-width-card {
     width: 17rem;
-    margin-right: 23px;
+    margin-right: 70px;
     margin-bottom: 40px;
 }
 
@@ -205,11 +205,12 @@ body {
 }
 
 .width-card {
-    max-width: 1327px;
+    max-width: 1400px;
 }
 
 .margin-card {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+    margin-left: 80px;
 }
 
 .table {
@@ -222,4 +223,9 @@ body {
 
 .fit-screen {
     min-height: 86vh;
+}
+
+.head-title,
+hr {
+    margin-left: 80px;
 }

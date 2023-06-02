@@ -2,7 +2,7 @@
 @section('content')
     <section class="hero-banner">
         <div class="row">
-            <div class="col-6">
+            <div class="col-sm-6">
                 <div class="dash top-distance-dash-hero"></div>
                 <div class="greeting">
                     Hello <span class="special-greet">There</span>
@@ -19,8 +19,8 @@
                 </div>
                 <a href="{{ route('item.index') }}" type="button" class="btn btn-light btn-view-data">View Data <i class="bi bi-arrow-right"></i></a>
             </div>
-            <div class="col-6">
-                <img src="{{ Vite::asset('resources/images/home/figure-profile.png') }}" class="figure-profile" alt="figure profile">
+            <div class="col-sm-6">
+                <img src="{{ Vite::asset('resources/images/home/figure-profile.png') }}" class="figure-profile img-fluid" alt="figure profile">
             </div>
         </div>
     </section>

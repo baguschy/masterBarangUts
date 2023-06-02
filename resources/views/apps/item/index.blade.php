@@ -2,17 +2,19 @@
 @section('content')
     <section class="hero-banner fit-screen">
         <div class="row container">
-            <div class="row mb-0 mt-4">
-                <div class="col-lg-9 col-xl-10">
-                    <h3 class="mb-3">{{ $titlePage }}</h3>
-                </div>
-                <div class="col-lg-3 col-xl-2">
-                    <div class="d-grid gap-4">
-                        <a href="{{ route('item.create') }}" class="btn btn-success">Tambah Barang</a>
+            {{-- <div class="head-title"> --}}
+                <div class="row mb-0 mt-4 head-title">
+                    <div class="col-lg-9 col-xl-10">
+                        <h3 class="mb-3">{{ $titlePage }}</h3>
+                    </div>
+                    <div class="col-lg-3 col-xl-2">
+                        <div class="d-grid gap-4">
+                            <a href="{{ route('item.create') }}" class="btn btn-success">Tambah Barang</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <hr>
+                <hr>
+            {{-- </div> --}}
             <div class="card rounded width-card margin-card">
                 @if (session()->has('notif'))
                     <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
@@ -33,8 +35,8 @@
                                 <th scope="col" width="250px">Aksi</th>
                             </tr>
                         </thead>
-                        @foreach ($items as $key => $item)
-                            <tbody>
+                        <tbody>
+                            @foreach ($items as $key => $item)
                                 <tr>
                                     <th scope="row">{{ $key+1 }}</th>
                                     <td>{{ $item->code }}</td>
@@ -117,8 +119,8 @@
 
                                     </td>
                                 </tr>
-                            </tbody>
-                        @endforeach
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
