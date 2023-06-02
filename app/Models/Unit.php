@@ -10,6 +10,7 @@ class Unit extends Model
 {
     use HasFactory;
 
+    protected $table = "units";
     /**
      * Get all of the comments for the Unit
      *
