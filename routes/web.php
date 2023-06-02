@@ -16,10 +16,6 @@ use App\Http\Controllers\ItemController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/welcome', function (){
     return view('apps.home');
 })->name('welcome');
 
