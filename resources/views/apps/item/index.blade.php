@@ -2,19 +2,17 @@
 @section('content')
     <section class="hero-banner fit-screen">
         <div class="row container">
-            {{-- <div class="head-title"> --}}
-                <div class="row mb-0 mt-4 head-title">
-                    <div class="col-lg-9 col-xl-10">
-                        <h3 class="mb-3">{{ $titlePage }}</h3>
-                    </div>
-                    <div class="col-lg-3 col-xl-2">
-                        <div class="d-grid gap-4">
-                            <a href="{{ route('item.create') }}" class="btn btn-success">Tambah Barang</a>
-                        </div>
+            <div class="row mb-0 mt-4 head-title">
+                <div class="col-lg-9 col-xl-10">
+                    <h3 class="mb-3">{{ $titlePage }}</h3>
+                </div>
+                <div class="col-lg-3 col-xl-2">
+                    <div class="d-grid gap-4">
+                        <a href="{{ route('item.create') }}" class="btn btn-success">Tambah Barang</a>
                     </div>
                 </div>
-                <hr>
-            {{-- </div> --}}
+            </div>
+            <hr>
             <div class="card rounded width-card margin-card">
                 @if (session()->has('notif'))
                     <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
@@ -45,7 +43,7 @@
                                     <td>{{ $item->stock }}</td>
                                     <td>{{ $item->unit->name }}</td>
                                     <td>
-                                        <button type="button" class="btn btn-md btn-primary" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                                        <a href="{{ route('item.edit', $item->id) }}" type="button" class="btn btn-md btn-primary" title="Edit"><i class="bi bi-pencil-square"></i></a>
                                         <button type="button" class="btn btn-md btn-success" title="Detail" data-bs-toggle="modal" data-bs-target="#detailModal{{ $loop->iteration }}"><i class="bi bi-info-square icon-white"></i></button>
                                         <button type="button" class="btn btn-danger btn-md" title="Hapus" data-bs-toggle="modal" data-bs-target="#destroyModal{{ $loop->iteration }}"><i class="bi bi-trash-fill"></i></button>
 
@@ -110,8 +108,12 @@
                                                         Apakah anda yakin ingin menghapus data barang {{ $item->name }} ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-danger">Hapus</button>
+                                                        <form action="{{ route('item.destroy', $item->id) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>

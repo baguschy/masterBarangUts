@@ -10,13 +10,14 @@
             <hr>
             <div class="card rounded width-card margin-card">
                 <div class="card-body">
-                    <form action="{{ route('item.store') }}" method="POST">
+                    <form action="{{ route('item.update', $item->id) }}" method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
                                     <label for="code-item" class="form-label">Kode Barang</label>
-                                    <input type="text" class="form-control @error('code_item') is-invalid @enderror" id="code" name="code_item" placeholder="Masukkan Kode Barang" value="{{ old('code_item') }}" required>
+                                    <input type="text" class="form-control @error('code_item') is-invalid @enderror" id="code" name="code_item" placeholder="Masukkan Kode Barang" value="{{ $item->code }}" required>
                                     @error('code_item')
                                         <div id="code-item" class="invalid-feedback">
                                             {{ $message }}
@@ -25,7 +26,7 @@
                                 </div>
                                 <div class="col-6">
                                     <label for="name-item" class="form-label">Nama Barang</label>
-                                    <input type="text" class="form-control @error('name_item') is-invalid @enderror" id="name-item" name="name_item" placeholder="Masukkan Nama Barang" value="{{ old('name_item') }}" required>
+                                    <input type="text" class="form-control @error('name_item') is-invalid @enderror" id="name-item" name="name_item" placeholder="Masukkan Nama Barang" value="{{ $item->name }}" required>
                                     @error('name_item')
                                         <div id="name-item" class="invalid-feedback">
                                             {{ $message }}
@@ -36,7 +37,7 @@
                             <div class="row mt-3">
                                 <div class="col-6">
                                     <label for="desc-item" class="form-label">Deskripsi Barang</label>
-                                    <textarea class="form-control @error('desc_item') is-invalid @enderror" id="desc-item" name="desc_item" placeholder="Masukkan Deskripsi Barang" style="height: 150px" required>{{ old('desc_item') }}</textarea>
+                                    <textarea class="form-control @error('desc_item') is-invalid @enderror" id="desc-item" name="desc_item" placeholder="Masukkan Deskripsi Barang" style="height: 150px" required>{{ $item->desc }}</textarea>
                                     @error('desc_item')
                                         <div id="desc-item" class="invalid-feedback">
                                             {{ $message }}
@@ -45,7 +46,7 @@
                                 </div>
                                 <div class="col-6">
                                     <label for="price-item" class="form-label">Harga</label>
-                                    <input type="number" class="form-control @error('price_item') is-invalid @enderror" id="price-item" name="price_item" placeholder="Masukkan Harga Barang" value="{{ old('price_item') }}" required>
+                                    <input type="number" class="form-control @error('price_item') is-invalid @enderror" id="price-item" name="price_item" placeholder="Masukkan Harga Barang" value="{{ $item->price }}" required>
                                     @error('price_item')
                                         <div id="price-item" class="invalid-feedback">
                                             {{ $message }}
@@ -56,7 +57,7 @@
                             <div class="row mt-3">
                                 <div class="col-6">
                                     <label for="stock-item" class="form-label">Stok Barang</label>
-                                    <input type="number" class="form-control @error('stock_item') is-invalid @enderror" id="stock-item" name="stock_item" placeholder="Masukkan Stok Barang" value="{{ old('stock_item') }}" required>
+                                    <input type="number" class="form-control @error('stock_item') is-invalid @enderror" id="stock-item" name="stock_item" placeholder="Masukkan Stok Barang" value="{{ $item->stock }}" required>
                                     @error('stock_item')
                                         <div id="stock-item" class="invalid-feedback">
                                             {{ $message }}
@@ -66,9 +67,9 @@
                                 <div class="col-6">
                                     <label for="unit-item" class="form-label">Satuan</label>
                                     <select class="form-select @error('unit_item') is-invalid @enderror" id="unit_item" name="unit_item" required aria-label="Default select example">
-                                        <option selected>Pilih Satuan Barang</option>
+                                        <option>Pilih Satuan Barang</option>
                                         @foreach ($units as $unit)
-                                            <option value="{{ $unit->id }}" @if (old('unit_item') == $unit->id) selected @endif>{{ $unit->name }}</option>
+                                            <option value="{{ $unit->id }}" @if ($item->unit_id == $unit->id) selected @endif>{{ $unit->name }}</option>
                                         @endforeach
                                     </select>
                                     @error('unit_item')
@@ -80,7 +81,7 @@
                             </div>
                             <div class="btn-action mt-4">
                                 <a href="{{ route('item.index') }}" type="button" class="btn btn-danger">Batal</a>
-                                <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </div>
                     </form>

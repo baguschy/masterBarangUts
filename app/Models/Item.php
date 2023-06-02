@@ -10,6 +10,8 @@ class Item extends Model
 {
     use HasFactory;
 
+    protected $table = "items";
+
     /**
      * Get the user that owns the Item
      *

@@ -79,7 +79,10 @@ class ItemController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $titlePage = "Edit Barang";
+        $item = Item::find($id);
+        $units = Unit::all();
+        return view('apps.item.edit', compact('item', 'units', 'titlePage'));
     }
 
     /**
@@ -87,7 +90,36 @@ class ItemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $messages = [
+            'required' => ':attribute belum diisi',
+            'unique' => 'Kode barang sudah digunakan',
+            'numeric' => 'Inputtan harus angka'
+        ];
+
+        $validate = Validator::make($request->all(), [
+            'code_item' => 'required|unique:items,code,' .$id,
+            'name_item' => 'required',
+            'desc_item' => 'required',
+            'price_item' => 'required|numeric',
+            'stock_item' => 'required|numeric',
+            'unit_item' => 'required'
+        ], $messages);
+
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate)->withInput();
+        }
+
+        $item = Item::find($id);
+
+        $item->code = $request->code_item;
+        $item->name = $request->name_item;
+        $item->desc = $request->desc_item;
+        $item->price = $request->price_item;
+        $item->stock = $request->stock_item;
+        $item->unit_id = $request->unit_item;
+        $item->save();
+
+        return redirect()->route('item.index')->with('notif', 'Berhasil Mengupdate Barang');
     }
 
     /**
@@ -95,6 +127,7 @@ class ItemController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Item::find($id)->delete();
+        return redirect()->route('item.index')->with('notif', 'Berhasil Menghapus Barang');
     }
 }
